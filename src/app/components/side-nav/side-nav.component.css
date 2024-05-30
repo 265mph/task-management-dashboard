@@ -1,0 +1,73 @@
+aside {
+    width: 14rem;
+    height: 96.5vh;
+    padding: 1rem .5rem;
+    background-color: #1b1b1b;
+    border-radius: .8rem;
+}
+
+.side-header {
+    display: flex;
+    flex-direction: column;
+    gap: .1rem;
+    margin: 0rem .5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ffffff;
+    cursor: pointer;
+}
+
+.side-header .logo {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.side-header .logo h3 {
+    color: #ffffff;
+}
+
+.side-header .logo span {
+    color: #ffffff;
+}
+
+.side-header p {
+    color: #868686;
+    font-size: .7rem;
+    font-style: italic;
+}
+
+.side-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 78vh;
+    margin-top: 1rem;
+}
+
+.side-option {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .4rem .4rem;
+    margin-top: .5rem;
+    border-radius: .3rem;
+    cursor: pointer;
+}
+
+.side-option:hover {
+    background-color: #343434;
+    transition: 250ms ease-in;
+}
+
+.active-link {
+    background-color: #343434;
+}
+
+.side-option span {
+    color: #ffffff;
+}
+
+.side-option p {
+    color: #ffffff;
+    font-size: .7rem;
+}
