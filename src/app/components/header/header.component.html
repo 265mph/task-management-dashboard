@@ -1,11 +1,14 @@
 <nav>
     <div class="welcome-tag">
-        <h2>Welcome back, {{ userName }}</h2>
+        <h2>Welcome Back</h2>
         <p> It's {{currentDate | date }}</p>
     </div>
 
     <div class="user-info">
-        <p>Front-End Dev.</p>
+        <div class="user-tag">
+            <p id="user-name">{{ userName }}</p>
+            <p>Front-End Dev. 09169534872</p>
+        </div>
         <div class="profile-photo">
             <img src="/assets/omtrmkN8.jpeg" alt="">
         </div>
