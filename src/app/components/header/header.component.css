@@ -3,7 +3,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .8rem 0 2rem 0;
+    padding: .8rem .8rem 2rem 0;
 }
 
 .welcome-tag h2 {
@@ -13,7 +13,6 @@ nav {
 
 .welcome-tag p {
     font-size: .9rem;
-    font-style: italic;
     color: #444444;
 }
 
@@ -25,7 +24,7 @@ nav {
 }
 
 .user-info p {
-    font-size: .9rem;
+    font-size: .8rem;
     font-style: italic;
     color: #444444;
 }
@@ -35,9 +34,12 @@ nav {
     aspect-ratio: 1/1;
     border-radius: 50%;
     overflow: hidden;
+    position: relative;
 }
 
 .profile-photo img {
     display: block;
     width: 100%;
+    position: absolute;
+    top: -1.3rem;
 }

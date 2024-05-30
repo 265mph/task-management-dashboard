@@ -2,7 +2,7 @@ aside {
     width: 14rem;
     height: 96.5vh;
     padding: 1rem .5rem;
-    background-color: #1b1b1b;
+    background-color: #131313;
     border-radius: .8rem;
 }
 
@@ -40,7 +40,7 @@ aside {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 78vh;
+    height: 80vh;
     margin-top: 1rem;
 }
 
@@ -69,5 +69,27 @@ aside {
 
 .side-option p {
     color: #ffffff;
-    font-size: .7rem;
+    font-size: .9rem;
+}
+
+#create-task {
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .4rem;
+    padding: .4rem .4rem;
+    margin-top: .8rem;
+    border-radius: .4rem;
+    cursor: pointer;
+}
+
+#create-task span {
+    color: #151515;
+}
+
+#create-task p {
+    color: #151515;
+    font-size: .9rem;
+    font-weight: 600;
 }
