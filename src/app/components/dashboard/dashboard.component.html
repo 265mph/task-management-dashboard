@@ -4,15 +4,15 @@
     <div class="my-tasks">
         <h3 style="margin-bottom: .8rem; font-weight: 500;">My Tasks</h3>
         <div class="tasks">
-            <ul>
+            <ul *ngFor="let taskItem of taskarray">
                 <li class="single-task">
                     <div class="task-infos">
-                        <p id="task">Finish tasks management app</p>
-                        <p id="desc">complete the code for the task management app</p>
+                        <p id="task">{{ taskItem.task }}</p>
+                        <p id="desc">{{taskItem.desc}}</p>
                     </div>
                     <div class="task-options">
-                        <span class="material-symbols-rounded" (click)="showTaskOptions()">more_horiz</span>
-                        <div class="options-actions" *ngIf="showOptions">
+                        <span class="material-symbols-rounded" (click)="showTaskOptions(taskItem)">more_horiz</span>
+                        <div class="options-actions" *ngIf="selectedTask === taskItem">
                             <ul>
                                 <li>edit task</li>
                                 <li>delete task</li>
@@ -35,12 +35,10 @@
                         <p id="desc">complete the code for the task management app</p>
                     </div>
                     <div class="task-options">
-                        <span class="material-symbols-rounded" (click)="showTaskOptions()">more_horiz</span>
-                        <div class="options-actions" *ngIf="showOptions">
+                        <span class="material-symbols-rounded">more_horiz</span>
+                        <div class="options-actions" >
                             <ul>
-                                <li>edit task</li>
                                 <li>delete task</li>
-                                <li>mark as done</li>
                             </ul>
                         </div>
                     </div>
@@ -58,16 +56,16 @@
         </div>
         <form [formGroup]="taskForm">
             <div class="input-div">
-                <label for="task">Task</label>
-                <input id="task" type="text" placeholder="create task">
+                <label>Task</label>
+                <input type="text" formControlName="name">
             </div>
 
             <div class="input-div">
-                <label for="desc">Description</label>
-                <input id="desc" type="text" placeholder="task description">
+                <label>Description</label>
+                <input type="text" formControlName="description">
             </div>
 
-            <button class="submit-form">Create Task</button>
+            <button class="submit-form" (click)="addTask()">Create Task</button>
         </form>
     </div>
 </div>
