@@ -1,0 +1,160 @@
+.tasks-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.my-tasks {
+    padding: .8rem;
+    border: 1px solid #b3b3b3;
+    border-radius: .4rem;
+}
+
+.done-tasks {
+    padding: .8rem;
+    border: 1px solid #b3b3b3;
+    border-radius: .4rem;
+}
+
+.single-task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: .6rem;
+    padding: .3rem;
+    border-left: 3px solid #1b1b1b;
+    cursor: pointer;
+}
+
+.single-task .task-options span {
+    cursor: pointer;
+    border-radius: .3rem;
+}
+
+.single-task .task-options span:hover {
+    background: #d5d5d5;
+    transition: 250ms ease-out;
+}
+
+.options-actions {
+    position: absolute;
+    right: 1.9rem;
+    width: 7rem;
+    background: #ffffff;
+    padding: .3rem;
+    border: 1px solid #b3b3b3;
+    border-radius: .3rem;
+}
+
+.options-actions li {
+    padding: .2rem .2rem .2rem 0;
+    font-size: .8rem;
+    text-align: right;
+}
+
+.options-actions li:hover {
+    background: #d5d5d5;
+    transition: 200ms ease-out;
+}
+
+#task {
+    font-size: 1rem;
+}
+
+#desc {
+    color: #494949;
+    font-size: .8rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+.modal-bg {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-form {
+    background: #ffff;
+    max-height: 80vh;
+    width: 45%;
+    padding: 1rem;
+    position: relative;
+    border: 1px solid #1b1b1b;
+    border-radius: .4rem;
+    box-shadow: 0 0.2rem 0.3rem #3d3d3d;
+}
+
+.modal-form .modal-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.modal-form .modal-form-header h3 {
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+}
+
+.modal-form .modal-form-header span {
+    cursor: pointer;
+    border-radius: .3rem;
+}
+
+.modal-form .modal-form-header span:hover {
+    background: #d5d5d5;
+    transition: 250ms ease-out;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form .input-div {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+form input {
+    width: 30vw;
+    padding: .6rem .4rem;
+    margin-bottom: 0.9rem;
+    border: 1px solid #494949;
+    border-radius: 0.2rem;
+    font-family: Poppins;
+}
+
+.submit-form {
+    width: 30vw;
+    background: #1b1b1b;
+    color: #ffffff;
+    padding: .6rem .4rem;
+    margin: .4rem 0 .5rem 0;
+    font-family: Poppins;
+    font-weight: 500;
+    border-radius: 0.2rem;
+    cursor: pointer;
+}

@@ -1,1 +1,73 @@
 <app-header></app-header>
+
+<div class="tasks-container">
+    <div class="my-tasks">
+        <h3 style="margin-bottom: .8rem; font-weight: 500;">My Tasks</h3>
+        <div class="tasks">
+            <ul>
+                <li class="single-task">
+                    <div class="task-infos">
+                        <p id="task">Finish tasks management app</p>
+                        <p id="desc">complete the code for the task management app</p>
+                    </div>
+                    <div class="task-options">
+                        <span class="material-symbols-rounded" (click)="showTaskOptions()">more_horiz</span>
+                        <div class="options-actions" *ngIf="showOptions">
+                            <ul>
+                                <li>edit task</li>
+                                <li>delete task</li>
+                                <li>mark as done</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="done-tasks">
+        <h3 style="margin-bottom: .8rem; font-weight: 500;">Completed Tasks</h3>
+        <div class="tasks">
+            <ul>
+                <li class="single-task">
+                    <div class="task-infos">
+                        <p id="task">Finish tasks management app</p>
+                        <p id="desc">complete the code for the task management app</p>
+                    </div>
+                    <div class="task-options">
+                        <span class="material-symbols-rounded" (click)="showTaskOptions()">more_horiz</span>
+                        <div class="options-actions" *ngIf="showOptions">
+                            <ul>
+                                <li>edit task</li>
+                                <li>delete task</li>
+                                <li>mark as done</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="modal-bg" #modal *ngIf="showModal">
+    <div class="modal-form">
+        <div class="modal-form-header">
+            <h3>Create new Task <span class="material-symbols-rounded">edit</span></h3>
+            <span class="material-symbols-rounded" (click)="closeModal()">close</span>
+        </div>
+        <form [formGroup]="taskForm">
+            <div class="input-div">
+                <label for="task">Task</label>
+                <input id="task" type="text" placeholder="create task">
+            </div>
+
+            <div class="input-div">
+                <label for="desc">Description</label>
+                <input id="desc" type="text" placeholder="task description">
+            </div>
+
+            <button class="submit-form">Create Task</button>
+        </form>
+    </div>
+</div>

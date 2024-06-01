@@ -4,6 +4,7 @@ aside {
     padding: 1rem .5rem;
     background-color: #131313;
     border-radius: .8rem;
+    position: fixed;
 }
 
 .side-header {
@@ -31,9 +32,9 @@ aside {
 }
 
 .side-header .logo-text p {
-    color: #868686;
-    font-size: .7rem;
-    font-style: italic;
+    color: #b3b3b3;
+    margin-top: -0.2rem;
+    font-size: .6rem;
 }
 
 .side-options {
@@ -82,11 +83,6 @@ aside {
     margin-top: .8rem;
     border-radius: .4rem;
     cursor: pointer;
-}
-
-#create-task:hover {
-    background: #d7d7d7;
-    transition: 250ms ease-in;
 }
 
 #create-task span {

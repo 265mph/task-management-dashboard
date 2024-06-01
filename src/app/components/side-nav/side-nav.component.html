@@ -11,12 +11,12 @@
 
     <div class="side-options">
         <div class="top-options">
-            <a class="side-option">
+            <a routerLink="/Dashboard" routerLinkActive="active-link" class="side-option">
                 <span class="material-symbols-rounded">grid_view</span>
                 <p>Dashboard</p>
             </a>
     
-            <a class="side-option">
+            <a routerLink="/Deleted" routerLinkActive="active-link" class="side-option">
                 <span class="material-symbols-rounded">delete</span>
                 <p>Recently Deleted</p>
             </a>
@@ -28,7 +28,7 @@
         </div>
 
         <div class="bottom-option">
-            <a id="create-task">
+            <a id="create-task" (click)="showModal()">
                 <span class="material-symbols-rounded">edit_square</span>
                 <p>Create new Task</p>
             </a>
