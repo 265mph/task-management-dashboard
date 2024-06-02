@@ -136,7 +136,7 @@ export class DashboardComponent implements OnInit{
   }
 
   moveToComepleted(task: Task) {
-    this.taskService.finishTask(task).subscribe(
+    this.taskService.finishTask(task.id,task).subscribe(
       data => {
         console.log(data);
         this.getTasks();

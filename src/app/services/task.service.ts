@@ -71,10 +71,12 @@ export class TaskService {
     return of(true)
   }
 
-  finishTask(task: Task): Observable<Task> {
+  finishTask(taskId: string, task: Task): Observable<Task> {
+    const index = this.tasks.findIndex(task => task.id === taskId);
     this.finishedTasks.push(task);
-    this.deleteTask(task.id, task).subscribe;
+    this.tasks.splice(index, 1)
     this.finishedTasksChanged.next(this.finishedTasks.slice());
+    this.taskChanged.next(this.tasks.slice());
 
     return of(task)
   }
