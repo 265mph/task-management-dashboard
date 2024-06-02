@@ -2,7 +2,7 @@
 
 <div class="tasks-container">
     <div class="my-tasks">
-        <h3 style="margin-bottom: .8rem; font-weight: 500;">My Tasks</h3>
+        <h3 style="margin-bottom: .8rem; font-weight: 500;">MY TASKS</h3>
         <div class="tasks">
             <ul *ngFor="let taskItem of taskarray">
                 <li class="single-task">
@@ -14,9 +14,9 @@
                         <span class="material-symbols-rounded" (click)="showTaskOptions(taskItem)">more_horiz</span>
                         <div class="options-actions" *ngIf="selectedTask === taskItem">
                             <ul>
-                                <li>edit task</li>
-                                <li>delete task</li>
-                                <li>mark as done</li>
+                                <li (click)="editTask(taskItem)">edit task</li>
+                                <li (click)="deleteTask(taskItem.id, taskItem)">delete task</li>
+                                <li (click)="moveToComepleted(taskItem)">mark as done</li>
                             </ul>
                         </div>
                     </div>
@@ -26,19 +26,19 @@
     </div>
 
     <div class="done-tasks">
-        <h3 style="margin-bottom: .8rem; font-weight: 500;">Completed Tasks</h3>
+        <h3 style="margin-bottom: .8rem; font-weight: 500;">COMPLETED TASKS</h3>
         <div class="tasks">
-            <ul>
-                <li class="single-task">
+            <ul *ngFor="let finished of doneTasks">
+                <li class="completed-task">
                     <div class="task-infos">
-                        <p id="task">Finish tasks management app</p>
-                        <p id="desc">complete the code for the task management app</p>
+                        <p id="task">{{finished.task}}</p>
+                        <p id="desc">{{finished.desc}}</p>
                     </div>
                     <div class="task-options">
-                        <span class="material-symbols-rounded">more_horiz</span>
-                        <div class="options-actions" >
+                        <span class="material-symbols-rounded" (click)="showTaskOptions(finished)">more_horiz</span>
+                        <div class="options-actions" *ngIf="selectedTask === finished">
                             <ul>
-                                <li>delete task</li>
+                                <li (click)="deleteCompleted(finished.id, finished)">delete task</li>
                             </ul>
                         </div>
                     </div>
@@ -65,7 +65,8 @@
                 <input type="text" formControlName="description">
             </div>
 
-            <button class="submit-form" (click)="addTask()">Create Task</button>
+            <button class="submit-form" (click)="addTask()" *ngIf="addButton">Create Task</button>
+            <button class="submit-form" (click)="updateTask()" *ngIf="updateButton;">Update Task</button>
         </form>
     </div>
 </div>
