@@ -60,12 +60,8 @@ export class DashboardComponent implements OnInit{
   
   // method to show the options for each task
   selectedTask: Task | null = null;
-  showTaskOptions(task: Task) { 
-    if (this.selectedTask === task) {
-      this.selectedTask = null;
-    } else {
-      this.selectedTask = task;
-    }
+  showTaskOptions(task: Task) {
+    this.selectedTask = this.selectedTask === task ? null : task;
   }
 
   getTasks() {
@@ -129,7 +125,6 @@ export class DashboardComponent implements OnInit{
     this.taskService.deleteTask(taskId, task).subscribe(
       data => {
         console.log(data);
-        this.getTasks();
         this.getCompleted();
       }
     )
@@ -149,10 +144,9 @@ export class DashboardComponent implements OnInit{
     this.taskService.deleteFinished(taskId, task).subscribe(
       data => {
         console.log(data);
-        this.getTasks();
         this.getCompleted();
       }
-    )
+    );
   }
 
   private generateId(): string {

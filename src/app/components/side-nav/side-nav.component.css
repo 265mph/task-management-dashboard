@@ -35,6 +35,7 @@ aside {
 .side-header .logo-text p {
     color: #b3b3b3;
     margin-top: -0.2rem;
+    margin-left: .15rem;
     font-size: .6rem;
 }
 

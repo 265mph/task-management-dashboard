@@ -21,7 +21,7 @@
     align-items: center;
     justify-content: space-between;
     margin-top: .6rem;
-    padding: .5rem .3rem;
+    padding: .8rem .3rem;
     border-left: 3px solid #0025e0;
     border-top: 1px solid #d5d5d5;
     border-right: 1px solid #d5d5d5;
@@ -35,7 +35,7 @@
     align-items: center;
     justify-content: space-between;
     margin-top: .6rem;
-    padding: .5rem .3rem;
+    padding: .8rem .3rem;
     border-left: 3px solid #00bd19;
     border-top: 1px solid #d5d5d5;
     border-right: 1px solid #d5d5d5;
@@ -44,13 +44,13 @@
     cursor: pointer;
 }
 
-.single-task .task-options span {
+.task-options span {
     cursor: pointer;
     border-radius: .3rem;
 }
 
 .task-options span:hover {
-    background: #d5d5d5;
+    background: #e6e6e6;
     transition: 250ms ease-out;
 }
 

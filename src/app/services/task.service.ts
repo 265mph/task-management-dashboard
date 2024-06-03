@@ -62,15 +62,6 @@ export class TaskService {
     return of(updatedTask)
   }
 
-  deleteTask(taskId: string, task: Task): Observable<boolean> {
-    const index = this.tasks.findIndex(task => task.id === taskId);
-    this.tasks.splice(index, 1);
-    this.deletedTasks.push(task);
-    this.taskChanged.next(this.tasks.slice());
-
-    return of(true)
-  }
-
   finishTask(taskId: string, task: Task): Observable<Task> {
     const index = this.tasks.findIndex(task => task.id === taskId);
     this.finishedTasks.push(task);
@@ -81,13 +72,24 @@ export class TaskService {
     return of(task)
   }
 
-  deleteFinished(taskId: string, task: Task): Observable<boolean> {
+  deleteTask(taskId: string, task: Task): Observable<boolean> {
     const index = this.tasks.findIndex(task => task.id === taskId);
-    this.finishedTasks.splice(index, 1);
+    this.tasks.splice(index, 1);
     this.deletedTasks.push(task);
-    this.finishedTasksChanged.next(this.tasks.slice());
+    this.taskChanged.next(this.tasks.slice());
 
     return of(true)
+  }
+
+  deleteFinished(taskId: string, task: Task): Observable<boolean> {
+    const index = this.finishedTasks.findIndex(task => task.id === taskId);
+    if (index !== -1) {
+      this.finishedTasks.splice(index, 1);
+      this.deletedTasks.push(task);
+      this.finishedTasksChanged.next(this.finishedTasks.slice());
+      return of(true);
+    }
+    return of(false);
   }
   
 }
