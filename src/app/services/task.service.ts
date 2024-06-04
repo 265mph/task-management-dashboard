@@ -91,5 +91,26 @@ export class TaskService {
     }
     return of(false);
   }
+
+  deleteDeleted(task: Task, taskId: string): Observable<boolean> {
+    const index = this.deletedTasks.findIndex(task => task.id === taskId);
+    if (index !== -1) {
+      this.deletedTasks.splice(index, 1);
+      this.deletedChanged.next(this.deletedTasks.slice())
+      return of(true)
+    }
+    return of(false)
+  }
+
+  recoverTask(taskId: string, task: Task): Observable<boolean> {
+    const index = this.deletedTasks.findIndex(task => task.id === taskId);
+    if (index !== -1) {
+      this.tasks.push(task)
+      this.deletedTasks.splice(index, 1);
+      this.deletedChanged.next(this.deletedTasks.slice())
+      return of(true)
+    }
+    return of(false)
+  }
   
 }

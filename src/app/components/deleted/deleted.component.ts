@@ -19,6 +19,12 @@ export class DeletedComponent implements OnInit{
     )
   }
 
+  getDeleted() {
+    this.taskService.getDeleted().subscribe(
+      task => {this.deletedTasks = task}
+    )
+  }
+
   selectedTask: Task | null = null;
   showTaskOptions(task: Task) { 
     if (this.selectedTask === task) {
@@ -28,7 +34,21 @@ export class DeletedComponent implements OnInit{
     }
   }
 
-  deleteTask(taskId: string) {
+  deleteTask(task: Task, taskId: string) {
+    this.taskService.deleteDeleted(task, taskId).subscribe(
+      data => {
+        console.log(data);
+        this.getDeleted()
+      }
+    )
+  }
 
+  recoverTask(task: Task, taskId: string) {
+    this.taskService.recoverTask(taskId, task).subscribe(
+      data => {
+        console.log(data);
+        this.getDeleted()
+      }
+    )
   }
 }

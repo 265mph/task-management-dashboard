@@ -13,7 +13,8 @@
                     <span class="material-symbols-rounded" (click)="showTaskOptions(deleted)">more_horiz</span>
                     <div class="options-actions" *ngIf="selectedTask === deleted">
                         <ul>
-                            <li (click)="deleteTask(deleted.id)">delete task</li>
+                            <li (click)="recoverTask(deleted,deleted.id)">recover task</li>
+                            <li (click)="deleteTask(deleted,deleted.id)">delete task</li>
                         </ul>
                     </div>
                 </div>
