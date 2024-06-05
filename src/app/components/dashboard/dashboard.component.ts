@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Task } from 'src/app/models/task';
 import { GeneralService } from 'src/app/services/general.service';
 import { TaskService } from 'src/app/services/task.service';
@@ -34,8 +34,8 @@ export class DashboardComponent implements OnInit{
   ngOnInit(): void {
     this.taskForm = this.formBuilder.group({
       id: [''],
-      name: [''],
-      description: ['']
+      name: ['', Validators.required],
+      description: ['', Validators.required]
     })
 
     this.taskService.getTasks().subscribe(

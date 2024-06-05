@@ -65,8 +65,8 @@
                 <input type="text" formControlName="description">
             </div>
 
-            <button class="submit-form" (click)="addTask()" *ngIf="addButton">Create Task</button>
-            <button class="submit-form" (click)="updateTask()" *ngIf="updateButton;">Update Task</button>
+            <button class="submit-form" (click)="addTask()" *ngIf="addButton" [disabled]="taskForm.invalid">Create Task</button>
+            <button class="submit-form" (click)="updateTask()" *ngIf="updateButton;" [disabled]="taskForm.invalid">Update Task</button>
         </form>
     </div>
 </div>
