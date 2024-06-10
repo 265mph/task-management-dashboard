@@ -14,7 +14,7 @@
                     <div class="options-actions" *ngIf="selectedTask === deleted">
                         <ul>
                             <li (click)="recoverTask(deleted,deleted.id)">recover task</li>
-                            <li (click)="deleteTask(deleted,deleted.id)">delete task</li>
+                            <li (click)="deleteTask(deleted,deleted.id)" style="color: rgb(222, 0, 0)">delete task</li>
                         </ul>
                     </div>
                 </div>

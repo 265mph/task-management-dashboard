@@ -15,8 +15,8 @@
                         <div class="options-actions" *ngIf="selectedTask === taskItem">
                             <ul>
                                 <li (click)="editTask(taskItem)">edit task</li>
-                                <li (click)="deleteTask(taskItem.id, taskItem)">delete task</li>
-                                <li (click)="moveToComepleted(taskItem)">mark as done</li>
+                                <li (click)="moveToComepleted(taskItem)">completed</li>
+                                <li (click)="deleteTask(taskItem.id, taskItem)" style="color: rgb(222, 0, 0)">delete task</li>
                             </ul>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                         <span class="material-symbols-rounded" (click)="showTaskOptions(finished)">more_horiz</span>
                         <div class="options-actions" *ngIf="selectedTask === finished">
                             <ul>
-                                <li (click)="deleteCompleted(finished.id, finished)">delete task</li>
+                                <li (click)="deleteCompleted(finished.id, finished)" style="color: rgb(222, 0, 0)">delete task</li>
                             </ul>
                         </div>
                     </div>
@@ -57,12 +57,12 @@
         <form [formGroup]="taskForm">
             <div class="input-div">
                 <label>Task</label>
-                <input type="text" formControlName="name">
+                <input type="text" formControlName="name" placeholder="required">
             </div>
 
             <div class="input-div">
                 <label>Description</label>
-                <input type="text" formControlName="description">
+                <input type="text" formControlName="description" placeholder="required">
             </div>
 
             <button class="submit-form" (click)="addTask()" *ngIf="addButton" [disabled]="taskForm.invalid">Create Task</button>

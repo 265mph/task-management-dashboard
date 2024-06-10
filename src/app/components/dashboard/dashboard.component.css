@@ -168,6 +168,10 @@ form input {
     font-family: inter;
 }
 
+form input:placeholder-shown {
+    font-style: italic;
+}
+
 .submit-form {
     width: 30vw;
     background: #1b1b1b;
