@@ -35,7 +35,7 @@
                         <p id="desc">{{finished.desc}}</p>
                     </div>
                     <div class="task-options">
-                        <span class="material-symbols-rounded" (click)="showTaskOptions(finished)">more_horiz</span>
+                        <span class="material-symbols-rounded" (click)="showTaskOptions(finished)" >more_horiz</span>
                         <div class="options-actions" *ngIf="selectedTask === finished">
                             <ul>
                                 <li (click)="deleteCompleted(finished.id, finished)" style="color: rgb(222, 0, 0)">delete task</li>
